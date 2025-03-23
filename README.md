@@ -7,27 +7,23 @@ This project is a Hyper-Scalable API Gateway built using Golang to handle reques
 ### API Gateway (Golang + Fiber)
 
 - Routes requests to PostgreSQL, MongoDB, Redis
-
 - Implements authentication & rate limiting
-
 - Uses Redis for caching & performance optimization
 
-- Frontend (Next.js Dashboard)
+### Frontend (Next.js Dashboard)
 
 - Visualizes API requests & logs
-
 - Allows testing API routes from UI
-
 - Manages API keys & security settings
 
 ## 📂 Folder Structure
 
 📦 api-gateway-monorepo
- ┣ 📂 backend (Go API Gateway)
- ┣ 📂 frontend (Next.js Dashboard)
- ┣ 📂 infra (Docker, Kubernetes, Terraform)
- ┣ 📜 README.md
- ┣ 📜 docker-compose.yml
+- ┣ 📂 backend (Go API Gateway)
+- ┣ 📂 frontend (Next.js Dashboard)
+- ┣ 📂 infra (Docker, Kubernetes, Terraform)
+- ┣ 📜 README.md
+- ┣ 📜 docker-compose.yml
 
 🛠️ Setup Instructions
 
@@ -60,8 +56,8 @@ curl http://localhost:8080/api/user/1
 
 ## 🚀 Future Enhancements
 
-🔹 Adding Authentication
-🔹 Implementing Graph-based API monitoring
-🔹 Deploying with Kubernetes & Terraform
+- 🔹 Adding Authentication
+- 🔹 Implementing Graph-based API monitoring
+- 🔹 Deploying with Kubernetes & Terraform
 
 ## 👨‍💻 Contributions are welcome! 🎉
