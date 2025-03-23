@@ -1,0 +1,17 @@
+{
+  "user": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "user_email": "john.doe@example.com",
+    "user_password": "securepassword",
+    "full_name": "John Doe"
+  },
+  "tasks": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "task_title": "Buy groceries",
+      "is_done": false,
+      "estimated_time": "1 hour",
+      "category": "shopping"
+    }
+  ]
+}

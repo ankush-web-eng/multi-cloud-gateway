@@ -1,0 +1,22 @@
+{
+  "user": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "email": "john.doe@example.com",
+    "password": "securepassword",
+    "username": "john_doe"
+  },
+  "tasks": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "title": "Buy groceries", 
+      "completed": false,
+      "due_date": "2020-12-31T23:59:59Z",
+      "priority": "high"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "title": "Walk the dog",
+      "completed": true
+    }
+  ]
+}
