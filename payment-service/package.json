@@ -1,0 +1,27 @@
+{
+  "packageManager": "yarn@4.8.1",
+  "name": "payment-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -b && node dist/index.js",
+    "build": "tsc -b"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "kafkajs": "^2.2.4",
+    "node-fetch": "^3.3.2",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
