@@ -1,8 +1,16 @@
 # 🚀 API Gateway Monorepo
 
-This project is a Hyper-Scalable API Gateway built using Golang to handle request routing, authentication, rate limiting, and caching across multiple microservices and databases. It also includes a Next.js-based frontend dashboard for monitoring API activity.
+- This is curreently in development phase
+
+This project is a Hyper-Scalable API Gateway built using Golang to handle request routing, authentication, rate limiting, payment servide, and caching across multiple microservices and databases. It also includes a Next.js-based frontend dashboard for monitoring API activity.
 
 ## 📌 Features
+
+### Architecture Diagram
+
+<div align="center">
+<img src = "/assets/architecture.png">
+</div>
 
 ### API Gateway (Golang + Fiber)
 
@@ -22,6 +30,8 @@ This project is a Hyper-Scalable API Gateway built using Golang to handle reques
 - ┣ 📂 backend (Go API Gateway)
 - ┣ 📂 frontend (Next.js Dashboard)
 - ┣ 📂 infra (Docker, Kubernetes, Terraform)
+- ┣ 📂 authentication-service
+- ┣ 📂 payment-service
 - ┣ 📜 README.md
 - ┣ 📜 docker-compose.yml
 
@@ -48,11 +58,11 @@ yarn install
 yarn build && yarn start
 ```
 
-4️⃣ Test API Gateway
+<!-- 4️⃣ Test API Gateway
 
 ```bash
 curl http://localhost:8080/api/user/1
-```
+``` -->
 
 ## 🚀 Future Enhancements
 
