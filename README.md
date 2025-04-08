@@ -12,7 +12,7 @@ This project is a Hyper-Scalable API Gateway built using Golang to handle reques
 <img src = "/assets/architecture.png">
 </div>
 
-### API Gateway (Golang + Fiber)
+### API Gateway (Golang)
 
 - Routes requests to PostgreSQL, MongoDB, Redis
 - Implements authentication & rate limiting
