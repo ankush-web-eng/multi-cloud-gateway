@@ -653,6 +653,7 @@ __metadata:
     bcrypt: "npm:^5.1.1"
     cookie-parser: "npm:^1.4.7"
     cors: "npm:^2.8.5"
+    dotenv: "npm:^16.4.7"
     express: "npm:^5.1.0"
     jsonwebtoken: "npm:^9.0.2"
     prisma: "npm:^6.5.0"
@@ -933,6 +934,13 @@ __metadata:
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: 10c0/81b91f9d39c4eaca068eb0c1eb0e4afbdc5bb2941d197f513dd596b820b956fef43485876226d65d497bebc15666aa2aa82c679e84f65d5f2bfbf14ee46e32c1
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.4.7":
+  version: 16.4.7
+  resolution: "dotenv@npm:16.4.7"
+  checksum: 10c0/be9f597e36a8daf834452daa1f4cc30e5375a5968f98f46d89b16b983c567398a330580c88395069a77473943c06b877d1ca25b4afafcdd6d4adb549e8293462
   languageName: node
   linkType: hard
 

@@ -21,6 +21,7 @@ func InitKafka() {
 
 func SendMessage(topic string, key string, value []byte) error {
 	msg := kafka.Message{
+		Topic: topic,
 		Key:   []byte(key),
 		Value: value,
 	}

@@ -4,11 +4,13 @@ import { uuid } from "uuidv4";
 import { PHONEPE_AUTHORIZATION_URL, PHONEPE_CLIENT_ID, PHONEPE_CLIENT_SECRET, PHONEPE_PAYMENT_URL, PHONEPE_STATUS_URL, REDIRECT_URL } from "./env";
 
 export async function handlePayment(data: any): Promise<{ url: string }> {
+    console.log("Received payment data:", data);
     const token = await getAuthToken();
     const paymentUrl = await createPayment(data.totalAmount, token, uuid());
     if (!paymentUrl) {
         throw new Error("Failed to create payment URL");
     }
+    console.log("Received url:", paymentUrl);
     return { url: paymentUrl };
 }
 
@@ -32,7 +34,7 @@ const getAuthToken = async () => {
         const response = await axios.request(options);
         return response.data.access_token || null;
     } catch (error) {
-        console.error("Error getting auth token:", error);
+        console.error("Error getting auth token:");
         return null;
     }
 }

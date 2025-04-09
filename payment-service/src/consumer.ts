@@ -1,6 +1,5 @@
 import { Kafka } from "kafkajs";
 import { handlePayment } from "./handler";
-import fetch from "node-fetch";
 import { JOB_STATUS_URL, KAFKA_BROKER } from "./env";
 import axios from "axios";
 
@@ -9,7 +8,7 @@ const consumer = kafka.consumer({ groupId: "payment-service" });
 
 export async function startConsumer() {
   await consumer.connect();
-  await consumer.subscribe({ topic: "payment_create", fromBeginning: false });
+  await consumer.subscribe({ topic: "payment-service", fromBeginning: false });
 
   await consumer.run({
     eachMessage: async ({ message }) => {
