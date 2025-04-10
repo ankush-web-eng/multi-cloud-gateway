@@ -13,18 +13,21 @@ export async function startConsumer() {
   await consumer.run({
     eachMessage: async ({ message }) => {
       const payload = JSON.parse(message.value?.toString() || "{}");
+      const key = message.key?.toString();
 
       try {
         const result = await handlePayment(payload.data);
-        await axios.post(`${JOB_STATUS_URL}/${payload.jobId}`, {
+        await axios.post(`${JOB_STATUS_URL}`, {
           status: "success",
+          key,
           result
         }, {
           headers: { "Content-Type": "application/json" }
         });
       } catch (err: any) {
-        await axios.post(`${JOB_STATUS_URL}/${payload.jobId}`, {
+        await axios.post(`${JOB_STATUS_URL}`, {
           status: "failed",
+          key,
           error: err.message
         }, {
           headers: { "Content-Type": "application/json" }
