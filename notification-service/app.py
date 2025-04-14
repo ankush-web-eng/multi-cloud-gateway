@@ -14,11 +14,12 @@ def consume():
         os.getenv("TOPIC"),
         bootstrap_servers=os.getenv("KAFKA_BOOTSTRAP_SERVERS"),
         value_deserializer=lambda m: json.loads(m.decode("utf-8")),
-        group_id="notification-group"
+        group_id="notification-service"
     )
 
     for msg in consumer:
-        data = msg.value
+        recieve = msg.value
+        data = recieve.get("data")
         print(f"Received: {data}")
         channel = data.get("channel")
         payload = data.get("data")

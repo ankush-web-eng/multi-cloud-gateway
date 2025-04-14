@@ -63,10 +63,10 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	jobIDStack = append(jobIDStack, returnJob{
-		JobID:     jobID,
-		ReturnURL: req.Data.(map[string]interface{})["returnUrl"].(string),
-	})
+	// jobIDStack = append(jobIDStack, returnJob{
+	// 	JobID:     jobID,
+	// 	ReturnURL: req.Data.(map[string]interface{})["returnUrl"].(string),
+	// })
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{
