@@ -27,13 +27,13 @@ This project is a Hyper-Scalable API Gateway built using Golang to handle reques
 ## 📂 Folder Structure
 
 📦 api-gateway-monorepo
-- ┣ 📂 backend (Go API Gateway)
+- ┣ 📂 main-server (Go API Gateway)
 - ┣ 📂 frontend (Next.js Dashboard)
 - ┣ 📂 infra (Docker, Kubernetes, Terraform)
-- ┣ 📂 authentication-service
-- ┣ 📂 payment-service
+- ┣ 📂 authentication-service (nodejs based)
+- ┣ 📂 payment-service (nodejs based)
+- ┣ 📂 notification-service (python based)
 - ┣ 📜 README.md
-- ┣ 📜 docker-compose.yml
 
 🛠️ Setup Instructions
 

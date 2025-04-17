@@ -1,9 +1,9 @@
-FROM node:20-alpine
+FROM node:20.11.1-alpine3.19
 
 WORKDIR /app
 
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 COPY . .
 
@@ -11,6 +11,6 @@ RUN yarn build
 RUN npx prisma generate
 
 ENV NODE_ENV=production
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["node", "dist/main.js"]
+CMD ["yarn", "dev"]

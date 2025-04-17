@@ -13,6 +13,10 @@ app.use(cors({
   credentials: true,
 }));
 
+app.get("/", (req, res) => {
+  res.send("Authentication Service is running!");
+});
+
 app.use("/auth", authRoutes);
 
 export default app;
