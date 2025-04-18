@@ -1,12 +1,12 @@
 
 import axios from "axios";
 import { uuid } from "uuidv4";
-import { PHONEPE_AUTHORIZATION_URL, PHONEPE_CLIENT_ID, PHONEPE_CLIENT_SECRET, PHONEPE_PAYMENT_URL, PHONEPE_STATUS_URL, REDIRECT_URL } from "./env";
+import { PHONEPE_AUTHORIZATION_URL, PHONEPE_CLIENT_ID, PHONEPE_CLIENT_SECRET, PHONEPE_PAYMENT_URL, PHONEPE_STATUS_URL } from "./env";
 
 export async function handlePayment(data: any): Promise<{ url: string }> {
     console.log("Received payment data:", data);
     const token = await getAuthToken();
-    const paymentUrl = await createPayment(data.totalAmount, token, uuid());
+    const paymentUrl = await createPayment(data.totalAmount, token, uuid(), data.redirectURL);
     if (!paymentUrl) {
         throw new Error("Failed to create payment URL");
     }
@@ -39,7 +39,8 @@ const getAuthToken = async () => {
     }
 }
 
-const createPayment = async (amount: number, access_token: string, orderId: string) => {
+const createPayment = async (amount: number, access_token: string, orderId: string, redirectURL: string) => {
+    const REDIRECT_URL = redirectURL;
     try {
         const req = {
             "merchantOrderId": orderId,

@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-export const REDIRECT_URL = process.env.REDIRECT_URL
 export const KAFKA_BROKER = process.env.KAFKA_BROKER || "localhost:9092"
 export const JOB_STATUS_URL = process.env.JOB_STATUS_URL
 
