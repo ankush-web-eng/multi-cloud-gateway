@@ -1,8 +1,8 @@
 export interface JobLog {
-    JobID: string;
-    Service: string;
-    Status: string;
-    Payload: any;
-    Response?: any;
-    CreatedAt: string;
+    jobId: string;
+    service: string;
+    status: string;
+    payload: any;
+    response?: any;
+    createdAt: string;
 }

@@ -24,11 +24,12 @@ export default function JobLogsDashboard() {
     const fetchJobLogs = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/job-logs`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/logs`);
             if (!response.ok) {
                 throw new Error('Failed to fetch job logs');
             }
             const data = await response.json();
+            console.log(data);
             setJobLogs(data);
         } catch (err) {
             setError(err instanceof Error ? err.message : 'An unknown error occurred');
@@ -107,32 +108,32 @@ export default function JobLogsDashboard() {
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {jobLogs.map((job) => (
+                            {jobLogs.map((job, index) => (
                                 <tr
-                                    key={job.JobID}
+                                    key={index}
                                     className="hover:bg-gray-50 transition-colors"
                                 >
                                     <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {job.JobID}
+                                        {job.jobId}
                                     </td>
                                     <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-700">
-                                        {job.Service}
+                                        {job.service}
                                     </td>
                                     <td className="px-4 py-3 whitespace-nowrap">
-                                        <StatusBadge status={job.Status} />
+                                        <StatusBadge status={job.status} />
                                     </td>
                                     <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-700">
-                                        {formatDate(job.CreatedAt)}
+                                        {formatDate(job.createdAt)}
                                     </td>
                                     <td className="px-4 py-3 whitespace-nowrap text-sm text-right">
                                         <button
-                                            onClick={() => toggleJobDetails(job.JobID)}
+                                            onClick={() => toggleJobDetails(job.jobId)}
                                             className="text-indigo-600 hover:text-indigo-900 flex items-center justify-end w-full"
                                         >
                                             <span>Details</span>
                                             <ChevronDown
                                                 size={16}
-                                                className={`ml-1 transition-transform duration-200 ${expandedJob === job.JobID ? 'transform rotate-180' : ''}`}
+                                                className={`ml-1 transition-transform duration-200 ${expandedJob === job.jobId ? 'transform rotate-180' : ''}`}
                                             />
                                         </button>
                                     </td>
@@ -149,21 +150,21 @@ export default function JobLogsDashboard() {
                 </div>
             )}
 
-            {expandedJob && jobLogs.find(job => job.JobID === expandedJob) && (
+            {expandedJob && jobLogs.find(job => job.jobId === expandedJob) && (
                 <div className="mt-4 bg-gray-50 rounded-lg p-4 animate-fadeIn">
                     <h3 className="text-lg font-medium text-gray-900 mb-3">Job Details</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <h4 className="text-sm font-medium text-gray-500">Payload</h4>
                             <pre className="mt-1 bg-gray-100 p-3 rounded-md text-xs overflow-x-auto">
-                                {JSON.stringify(jobLogs.find(job => job.JobID === expandedJob)?.Payload, null, 2)}
+                                {JSON.stringify(jobLogs.find(job => job.jobId === expandedJob)?.payload, null, 2)}
                             </pre>
                         </div>
-                        {jobLogs.find(job => job.JobID === expandedJob)?.Response && (
+                        {jobLogs.find(job => job.jobId === expandedJob)?.response && (
                             <div>
                                 <h4 className="text-sm font-medium text-gray-500">Response</h4>
                                 <pre className="mt-1 bg-gray-100 p-3 rounded-md text-xs overflow-x-auto">
-                                    {JSON.stringify(jobLogs.find(job => job.JobID === expandedJob)?.Response, null, 2)}
+                                    {JSON.stringify(jobLogs.find(job => job.jobId === expandedJob)?.response, null, 2)}
                                 </pre>
                             </div>
                         )}

@@ -1,32 +1,32 @@
 export const JOBS = [
     {
-        JobID: "job-001",
-        Service: "email-sender",
-        Status: "done",
-        Payload: { recipients: 150, template: "welcome" },
-        Response: { sent: 150, failed: 0 },
-        CreatedAt: new Date(Date.now() - 3600000).toISOString()
+        jobId: "job-001",
+        service: "email-sender",
+        status: "done",
+        payload: { recipients: 150, template: "welcome" },
+        response: { sent: 150, failed: 0 },
+        createdAt: new Date(Date.now() - 3600000).toISOString()
     },
     {
-        JobID: "job-002",
-        Service: "data-processor",
-        Status: "processing",
-        Payload: { dataSize: "2.5GB", format: "CSV" },
-        CreatedAt: new Date(Date.now() - 1800000).toISOString()
+        jobId: "job-002",
+        service: "data-processor",
+        status: "processing",
+        payload: { dataSize: "2.5GB", format: "CSV" },
+        createdAt: new Date(Date.now() - 1800000).toISOString()
     },
     {
-        JobID: "job-003",
-        Service: "notification-service",
-        Status: "failed",
-        Payload: { userId: "user123", message: "Important update" },
-        Response: { error: "Service unavailable" },
-        CreatedAt: new Date(Date.now() - 7200000).toISOString()
+        jobId: "job-003",
+        service: "notification-service",
+        status: "failed",
+        payload: { userId: "user123", message: "Important update" },
+        response: { error: "Service unavailable" },
+        createdAt: new Date(Date.now() - 7200000).toISOString()
     },
     {
-        JobID: "job-004",
-        Service: "data-backup",
-        Status: "pending",
-        Payload: { source: "main-database", destination: "cloud-storage" },
-        CreatedAt: new Date(Date.now() - 300000).toISOString()
+        jobId: "job-004",
+        service: "data-backup",
+        status: "pending",
+        payload: { source: "main-database", destination: "cloud-storage" },
+        createdAt: new Date(Date.now() - 300000).toISOString()
     }
 ]
