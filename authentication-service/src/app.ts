@@ -17,6 +17,6 @@ app.get("/", (req, res) => {
   res.send("Authentication Service is running!");
 });
 
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;
