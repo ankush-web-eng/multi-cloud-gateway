@@ -12,6 +12,7 @@ const COOKIE_DOMAIN = cookie_domain as string;
 router.post("/signin", asyncHandler(async (req, res) => {
     try {
         const { email, type, phone } = req.body;
+        console.log("Received request to send OTP:", req.body);
 
         const foundUser = await prisma.user.findFirst({
             where: {
@@ -35,6 +36,8 @@ router.post("/signin", asyncHandler(async (req, res) => {
                 }
             });
         }
+
+        console.log(otp, foundUser);
 
         const options = {
             channel: type === 'email' ? 'email' : type === 'sms' ? 'sms' : 'whatsapp',

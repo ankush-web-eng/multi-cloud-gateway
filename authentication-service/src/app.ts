@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth";
+import loginRoutes from "./routes/login";
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/auth", loginRoutes);
 
 export default app;

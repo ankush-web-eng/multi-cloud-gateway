@@ -11,6 +11,7 @@ export const authService = {
                 { email, password },
                 { withCredentials: true }
             );
+            console.log('Login response:', response.data);
             return response.data;
         } catch (error) {
             console.error('Login error:', error);
@@ -30,6 +31,7 @@ export const authService = {
                 { email, name, phone, password },
                 { withCredentials: true }
             );
+            console.log('Signup response:', response.data);
             return response.data;
         } catch (error) {
             console.error('Signup error:', error);
@@ -51,6 +53,7 @@ export const authService = {
                 payload,
                 { withCredentials: true }
             );
+            console.log('OTP request response:', response.data);
             return response.data;
         } catch (error) {
             console.error('Login error:', error);
@@ -73,6 +76,7 @@ export const authService = {
                 payload,
                 { withCredentials: true }
             );
+            console.log('OTP verification response:', response.data);
             return response.data;
         } catch (error) {
             console.error('OTP verification error:', error);
@@ -85,6 +89,7 @@ export const authService = {
             const response = await axios.get(`${API_URL}/auth/me`, {
                 withCredentials: true,
             });
+            console.log('User data response:', response.data);
             return response.data.user;
         } catch (error) {
             console.error('Error fetching user:', error);
