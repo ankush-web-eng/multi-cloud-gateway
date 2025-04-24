@@ -8,9 +8,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-
 app.use(cors({
-  origin: /^https:\/\/.*\.whyankush\.wtf$/,
+  origin: [/^https:\/\/.*\.whyankush\.wtf$/, 'http://localhost:3000'],
   credentials: true,
 }));
 

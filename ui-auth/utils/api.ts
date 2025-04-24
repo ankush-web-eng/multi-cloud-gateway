@@ -49,7 +49,7 @@ export const authService = {
                 : { phone: identifier, type };
 
             const response = await axios.post(
-                `${API_URL}/otp/signin`,
+                `${API_URL}/auth/signin`,
                 payload,
                 { withCredentials: true }
             );
@@ -72,7 +72,7 @@ export const authService = {
                 : { phone: identifier, otp };
 
             const response = await axios.post(
-                `${API_URL}/otp/otp`,
+                `${API_URL}/auth/otp`,
                 payload,
                 { withCredentials: true }
             );
